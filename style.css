@@ -165,7 +165,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("Image/Hai.jfif") no-repeat center;
+    background: url("Image/Background/background.jfif") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -213,6 +213,28 @@ section .title::after{
     background: none;
 }
 
+.typing {
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animasi cursor berkedip */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+
 /* about section styling */
 .about .title::after{
     content: "who i am";
@@ -257,26 +279,33 @@ section .title::after{
     background: none;
 }
 
-/* services section styling */
-.services .serv-content{
+/* portfolio section styling */
+.portfolio .serv-content {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjusts space between cards */
     justify-content: center;
+    align-items: flex-start;
 }
-.services, .teams{
-    color:#fff;
+
+.portfolio, .teams {
+    color: #fff;
     background: #111;
 }
-.services .title::before,
-.teams .title::before{
+
+.portfolio .title::before,
+.teams .title::before {
     background: #fff;
 }
-.services .title::after,
-.teams .title::after{
+
+.portfolio .title::after,
+.teams .title::after {
     background: #111;
     content: "what i do";
 }
-.services .serv-content .card{
-    width: calc(33% - 20px);
+
+.portfolio .serv-content .card {
+    width: 280px;
     background: #222;
     text-align: center;
     border-radius: 6px;
@@ -285,34 +314,43 @@ section .title::after{
     transition: all 0.3s ease;
     object-fit: cover;
 }
-.services .serv-content .card img{
-    width: 304px;
+
+.portfolio .serv-content .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
 }
-.services .serv-content .card:hover{
+
+.portfolio .serv-content .card:hover {
     background: crimson;
 }
-.services .serv-content .card .box{
+
+.portfolio .serv-content .card .box {
     transition: all 0.3s ease;
 }
-.services .serv-content .card:hover .box{
+
+.portfolio .serv-content .card:hover .box {
     transform: scale(1.05);
 }
-.services .serv-content .card i{
+
+.portfolio .serv-content .card i {
     font-size: 50px;
     color: crimson;
     transition: color 0.3s ease;
 }
-.services .serv-content .card:hover i{
+
+.portfolio .serv-content .card:hover i {
     color: #fff;
 }
-.services .serv-content .card .text{
+
+.portfolio .serv-content .card .text {
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
 
 /* skills section styling */
-
 .skills .title::after{
     content: "what i know";
 }
@@ -370,6 +408,9 @@ section .title::after{
     top: 0;
     background: crimson;
 }
+.skills-content .right .java::before{
+    width: 80%;
+}
 .skills-content .right .html::before{
     width: 75%;
 }
@@ -379,73 +420,88 @@ section .title::after{
 .skills-content .right .php::before{
     width: 50%;
 }
+.skills-content .right .javascript::before{
+    width: 85%;
+}
+.skills-content .right .nodejs::before{
+    width: 75%;
+}
+.skills-content .right .reactjs::before{
+    width: 70%;
+}
+.skills-content .right .laravel::before{
+    width: 70%;
+}
+.skills-content .right .angularjs::before{
+    width: 65%;
+}
 
-/* teams section styling */
-.teams .carousel{
+/* Certificate section styling */
+.certificate .serv-content{
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;                 
+    flex-wrap: wrap;  
 }
+.certificate, .teams{
+    color:#fff;
+    background: #111;
+}
+.certificate .title::before,
+.teams .title::before{
+    background: #fff;
+}
+.certificate .title::after,
 .teams .title::after{
-    content: "";
+    background: #111;
+    content: "what i do";
 }
-.teams .carousel .card{
+.certificate .serv-content .card{
+    width: 280px;   
     background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
     text-align: center;
-    overflow: hidden;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
     transition: all 0.3s ease;
-    margin-left: 5px;
+    object-fit: cover;
 }
-.teams .carousel .card:hover{
+.certificate .serv-content .card img{
+    width: 100%;            
+    height: 200px;              
+    object-fit: cover;          
+    border-radius: 5px;
+}
+.certificate .serv-content .card:hover{
     background: crimson;
 }
-.teams .carousel .card .box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.certificate .serv-content .card .box{
     transition: all 0.3s ease;
 }
-.teams .carousel .card:hover .box{
+.certificate .serv-content .card:hover .box{
     transform: scale(1.05);
 }
-.teams .carousel .card .text{
+.certificate .serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+.certificate .serv-content .card:hover i{
+    color: #fff;
+}
+.certificate .serv-content .card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
-.teams .carousel .card img{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid crimson;
-    transition: all 0.3s ease;
-}
-.teams .carousel .card:hover img{
-    border-color: #fff;
-}
-.owl-dots{
+.cert-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
     text-align: center;
-    margin-top: 20px;
 }
-.owl-dot{
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none!important;
-    border-radius: 50%;
-    border: 2px solid crimson!important;
-    transition: all 0.3s ease;
-}
-.owl-dot.active{
-    width: 35px;
-    border-radius: 14px;
-}
-.owl-dot.active,
-.owl-dot:hover{
-    background: crimson!important;
-}
+
 
 /* contact section styling */
 .contact .title::after{
@@ -625,7 +681,11 @@ footer span a:hover{
     .about .about-content .right{
         flex: 100%;
     }
-    .services .serv-content .card{
+    .portfolio .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .certificate .serv-content .card{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
@@ -649,7 +709,10 @@ footer span a:hover{
     .home .home-content a{
         font-size: 20px;
     }
-    .services .serv-content .card{
+    .portfolio .serv-content .card{
+        width: 100%;
+    }
+    .certificate .serv-content .card{
         width: 100%;
     }
 }
