@@ -191,7 +191,7 @@ section .title::after {
 /* home section styling */
 .home {
     display: flex;
-    background: url("Image/Background/background.jfif") no-repeat center;
+    background: url("https://picsum.photos/1920/1080") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -251,31 +251,38 @@ section .title::after {
 /* about section styling */
 .about .title::after {
     content: "who i am";
-  }
-  .about .about-content .left {
+}
+
+.about .about-content .left {
     width: 45%;
-  }
-  .about .about-content .left img {
-    height: 600px;
+}
+
+.about .about-content .left img {
+    height: 500px;
     width: 400px;
     object-fit: cover;
-    border-radius: 10px;
-  }
-  .about .about-content .right {
+    border-radius: 20px;
+}
+
+.about .about-content .right {
     width: 55%;
-  }
-  .about .about-content .right .text {
+}
+
+.about .about-content .right .text {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
-  }
-  .about .about-content .right .text span {
+}
+
+.about .about-content .right .text span {
     color: crimson;
-  }
-  .about .about-content .right p {
+}
+
+.about .about-content .right p {
     text-align: justify;
-  }
-  .about .about-content .right a {
+}
+
+.about .about-content .right a {
     display: inline-block;
     background: crimson;
     color: #fff;
@@ -283,46 +290,56 @@ section .title::after {
     font-weight: 500;
     padding: 10px 30px;
     margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid crimson;
+    border-radius: 10px;
+    border: 1px solid crimson;
     transition: all 0.3s ease;
-  }
-  .about .about-content .right a:hover {
+}
+
+.about .about-content .right a:hover {
     color: crimson;
     background: none;
-  }
-  
-  /* Tabel Styling */
-  .about .about-content .right table {
+}
+
+/* Tabel Styling */
+.about .about-content .right table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
-    background-color: #f9f9f9; /* Warna latar belakang tabel */
-    border-radius: 8px; /* Border radius untuk tabel */
-    overflow: hidden; /* Memastikan border radius berfungsi */
-  }
-  
-  .about .about-content .right th,
-  .about .about-content .right td {
+    background-color: #f9f9f9;
+    /* Warna latar belakang tabel */
+    border-radius: 8px;
+    /* Border radius untuk tabel */
+    overflow: hidden;
+    /* Memastikan border radius berfungsi */
+}
+
+.about .about-content .right th,
+.about .about-content .right td {
     border: 1px solid #ddd;
-    padding: 12px; /* Padding untuk cell */
+    padding: 12px;
+    /* Padding untuk cell */
     text-align: left;
-  }
-  
-  .about .about-content .right th {
-    background-color: crimson; /* Warna latar belakang header tabel */
-    color: white; /* Warna teks header tabel */
-    border-radius: 8px 8px 0 0; /* Border radius untuk sudut header tabel */
-  }
-  
-  .about .about-content .right tr:nth-child(even) {
-    background-color: #f2f2f2; /* Warna latar belakang untuk baris genap */
-  }
-  
-  .about .about-content .right tr:hover {
-    background-color: #ddd; /* Warna latar belakang saat hover */
-  }
-  
+}
+
+.about .about-content .right th {
+    background-color: crimson;
+    /* Warna latar belakang header tabel */
+    color: white;
+    /* Warna teks header tabel */
+    border-radius: 10px 10px 0 0;
+    /* Border radius untuk sudut header tabel */
+}
+
+.about .about-content .right tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Warna latar belakang untuk baris genap */
+}
+
+.about .about-content .right tr:hover {
+    background-color: #ddd;
+    /* Warna latar belakang saat hover */
+}
+
 
 
 /* portfolio section styling */
@@ -456,8 +473,11 @@ section .title::after {
     width: 100%;
     background: lightgrey;
     position: relative;
+    /* Animation related properties */
+    overflow: hidden;
 }
 
+/* Skill bar background color and animation */
 .skills .skills-content .right .line::before {
     content: "";
     position: absolute;
@@ -467,41 +487,159 @@ section .title::after {
     background: crimson;
 }
 
+/* Java Skill Bar */
 .skills-content .right .java::before {
-    width: 80%;
+    width: 0;
+    background: #4CAF50;
+    animation: fillJava 2s forwards;
 }
 
+@keyframes fillJava {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+/* HTML Skill Bar */
 .skills-content .right .html::before {
-    width: 75%;
+    width: 0;
+    background: #FF5722;
+    animation: fillHTML 2s forwards;
 }
 
+@keyframes fillHTML {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+/* CSS Skill Bar */
 .skills-content .right .css::before {
-    width: 65%;
+    width: 0;
+    background: #2196F3;
+    animation: fillCSS 2s forwards;
 }
 
+@keyframes fillCSS {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 65%;
+    }
+}
+
+/* PHP Skill Bar */
 .skills-content .right .php::before {
-    width: 50%;
+    width: 0;
+    background: #9C27B0;
+    animation: fillPHP 2s forwards;
 }
 
+@keyframes fillPHP {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+/* JavaScript Skill Bar */
 .skills-content .right .javascript::before {
-    width: 85%;
+    width: 0;
+    background: #FFC107;
+    animation: fillJavaScript 2s forwards;
 }
 
+@keyframes fillJavaScript {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+/* Node.js Skill Bar */
 .skills-content .right .nodejs::before {
-    width: 75%;
+    width: 0;
+    background: #3E863D;
+    animation: fillNodeJS 2s forwards;
 }
 
+@keyframes fillNodeJS {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+/* React.js Skill Bar */
 .skills-content .right .reactjs::before {
-    width: 70%;
+    width: 0;
+    background: #61DBFB;
+    animation: fillReactJS 2s forwards;
 }
 
+@keyframes fillReactJS {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+/* Laravel Skill Bar */
 .skills-content .right .laravel::before {
-    width: 70%;
+    width: 0;
+    background: #FF2D20;
+    animation: fillLaravel 2s forwards;
 }
 
-.skills-content .right .angularjs::before {
-    width: 65%;
+@keyframes fillLaravel {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 65%;
+    }
 }
+
+/* AngularJS Skill Bar */
+.skills-content .right .angularjs::before {
+    width: 0;
+    background: #DD0031;
+    animation: fillAngularJS 2s forwards;
+}
+
+@keyframes fillAngularJS {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
 
 /* Certificate section styling */
 .certificate .serv-content {
@@ -704,6 +842,7 @@ footer {
     padding: 15px 23px;
     color: #fff;
     text-align: center;
+    position: relative;
 }
 
 footer span a {
@@ -714,7 +853,32 @@ footer span a {
 footer span a:hover {
     text-decoration: underline;
 }
-
+/* 
+/* scroll-to-top styling */
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 1000;
+  }
+  
+  .scroll-to-top:hover {
+    background-color: grey;
+  }
+  
 
 /* responsive media query start */
 @media (max-width: 1104px) {
