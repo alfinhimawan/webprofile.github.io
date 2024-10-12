@@ -836,24 +836,6 @@ section .title::after {
     background: none;
 }
 
-/* footer section styling */
-footer {
-    background: #111;
-    padding: 15px 23px;
-    color: #fff;
-    text-align: center;
-    position: relative;
-}
-
-footer span a {
-    color: crimson;
-    text-decoration: none;
-}
-
-footer span a:hover {
-    text-decoration: underline;
-}
-/* 
 /* scroll-to-top styling */
 .scroll-to-top {
     position: fixed;
@@ -876,9 +858,27 @@ footer span a:hover {
   }
   
   .scroll-to-top:hover {
-    background-color: grey;
+    background-color: black;
   }
   
+
+/* footer section styling */
+footer {
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+footer span a {
+    color: crimson;
+    text-decoration: none;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
 
 /* responsive media query start */
 @media (max-width: 1104px) {
